@@ -10,7 +10,23 @@ class Home extends BaseController
 
     public function index():string
     {
-        return view('frontend/header').
+        $data['title'] = 'Welcome!';
+        $data['nameBussines'] = "My Shop";
+
+        return view('frontend/header', $data).
+                view('frontend/menu', $data).
+                view('frontend/principal').
+                view('frontend/footer');
+    }
+
+    public function products():string
+    {
+        $data['title'] = 'Products';
+        $data['nameBussines'] = "My Shop";
+
+        return view('frontend/header', $data).
+                view('frontend/menu', $data).
+                view('frontend/products').
                 view('frontend/footer');
     }
 }
