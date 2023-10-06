@@ -1,0 +1,110 @@
+CRITICAL - 2023-10-04 06:05:59 --> Class 'CodeIgniter\Models' not found
+in APPPATH\Models\ProductsModel.php on line 5.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(306): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\MyShop\\app\\Models\\ProductsModel.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\ProductsModel')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\ProductsModel')
+ 5 APPPATH\Controllers\Products.php(9): spl_autoload_call('App\\Models\\ProductsModel')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Products->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 06:07:24 --> Class 'App\Models\Models' not found
+in APPPATH\Models\ProductsModel.php on line 5.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(306): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\MyShop\\app\\Models\\ProductsModel.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\ProductsModel')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\ProductsModel')
+ 5 APPPATH\Controllers\Products.php(9): spl_autoload_call('App\\Models\\ProductsModel')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Products->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-04 06:07:51 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: YES) in C:\xampp\htdocs\MyShop\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\xampp\htdocs\MyShop\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', '', '', 'my_shop', 3306, '', 0)
+#1 C:\xampp\htdocs\MyShop\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\MyShop\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\MyShop\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\MyShop\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\MyShop\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\MyShop\app\Models\ProductsModel.php(18): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\MyShop\app\Controllers\Products.php(11): App\Models\ProductsModel->getProducts()
+#8 C:\xampp\htdocs\MyShop\system\CodeIgniter.php(919): App\Controllers\Products->index()
+#9 C:\xampp\htdocs\MyShop\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#10 C:\xampp\htdocs\MyShop\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\MyShop\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: YES) in C:\xampp\htdocs\MyShop\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\MyShop\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\MyShop\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\MyShop\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\MyShop\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\MyShop\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\MyShop\app\Models\ProductsModel.php(18): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\MyShop\app\Controllers\Products.php(11): App\Models\ProductsModel->getProducts()
+#7 C:\xampp\htdocs\MyShop\system\CodeIgniter.php(919): App\Controllers\Products->index()
+#8 C:\xampp\htdocs\MyShop\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#9 C:\xampp\htdocs\MyShop\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\MyShop\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-10-04 06:07:51 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\ProductsModel.php(18): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\Products.php(11): App\Models\ProductsModel->getProducts()
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Products->index()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-04 06:08:35 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'my_shop' in C:\xampp\htdocs\MyShop\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\xampp\htdocs\MyShop\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', '', '', 'my_shop', 3307, '', 0)
+#1 C:\xampp\htdocs\MyShop\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\MyShop\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\MyShop\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\MyShop\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\MyShop\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\MyShop\app\Models\ProductsModel.php(18): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\MyShop\app\Controllers\Products.php(11): App\Models\ProductsModel->getProducts()
+#8 C:\xampp\htdocs\MyShop\system\CodeIgniter.php(919): App\Controllers\Products->index()
+#9 C:\xampp\htdocs\MyShop\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#10 C:\xampp\htdocs\MyShop\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\MyShop\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'my_shop' in C:\xampp\htdocs\MyShop\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\MyShop\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\MyShop\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\MyShop\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\MyShop\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\MyShop\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\MyShop\app\Models\ProductsModel.php(18): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\MyShop\app\Controllers\Products.php(11): App\Models\ProductsModel->getProducts()
+#7 C:\xampp\htdocs\MyShop\system\CodeIgniter.php(919): App\Controllers\Products->index()
+#8 C:\xampp\htdocs\MyShop\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#9 C:\xampp\htdocs\MyShop\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\MyShop\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-10-04 06:08:35 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'my_shop'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\ProductsModel.php(18): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\Products.php(11): App\Models\ProductsModel->getProducts()
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Products->index()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

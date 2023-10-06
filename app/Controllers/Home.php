@@ -19,6 +19,7 @@ class Home extends BaseController
                 view('frontend/footer');
     }
 
+    /*
     public function products():string
     {
         $data['title'] = 'Products';
@@ -29,4 +30,5 @@ class Home extends BaseController
                 view('frontend/products').
                 view('frontend/footer');
     }
+    */
 }
