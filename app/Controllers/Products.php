@@ -15,6 +15,7 @@
 
             return view('frontend/header', $data).
                 view('frontend/menu', $data).
+                view('backend/add_button').
                 view('frontend/products', $data).
                 view('frontend/footer');
         }

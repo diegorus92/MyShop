@@ -16,7 +16,11 @@
         public function getProducts($id = null)
         {
             if(! $id == null){
-                return $this->where(['productId' => $id])->first();
+                return $this->
+                    select('products.name as productName, products.price, products.stock, categories.name as categoryName')->
+                    where(['productId' => $id])->
+                    join('categories', 'categories.categoryId = products.categoryProduct')->
+                    first();
             }
 
             return $this->findAll();
