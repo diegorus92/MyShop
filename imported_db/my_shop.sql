@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-10-2023 a las 07:02:58
+-- Tiempo de generación: 12-10-2023 a las 01:34:22
 -- Versión del servidor: 8.0.31
 -- Versión de PHP: 7.4.30
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `my_shop`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categories`
+--
+
+CREATE TABLE `categories` (
+  `categoryId` int NOT NULL,
+  `name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Volcado de datos para la tabla `categories`
+--
+
+INSERT INTO `categories` (`categoryId`, `name`) VALUES
+(1, 'Electronics'),
+(2, 'cleaning');
 
 -- --------------------------------------------------------
 
@@ -43,11 +62,19 @@ INSERT INTO `products` (`productId`, `name`, `price`, `stock`, `categoryProduct`
 (1, 'Microprocessor Intel I5 600K', 23400.9, 10, 1),
 (2, 'Memory RAM Kingston 8GB(2x4GB) 4600MHz', 15800, 30, 1),
 (3, 'Broom (premium wood)', 2400.5, 100, 2),
-(4, 'Detergent \"MrClean\" (strawberry) 1L', 500.9, 300, 2);
+(4, 'Detergent \"MrClean\" (strawberry) 1L', 500.9, 300, 2),
+(5, 'SSD 120GB Kingston', 25000, 50, 1),
+(6, 'Bleach 1L \"Señor Limpieza\"', 55, 250, 2);
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`categoryId`);
 
 --
 -- Indices de la tabla `products`
@@ -61,10 +88,16 @@ ALTER TABLE `products`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `categoryId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `productId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `productId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restricciones para tablas volcadas
