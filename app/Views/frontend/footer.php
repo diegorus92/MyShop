@@ -19,5 +19,7 @@
 
 
 <script type="text/javascript" src="<?php echo base_url('/assets/bootstrap/js/bootstrap.min.js');?>"></script>
+<script src="https://kit.fontawesome.com/afdc4a79e1.js" crossorigin="anonymous"></script>
+
     </body>
 </html>

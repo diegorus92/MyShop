@@ -11,3 +11,5 @@ $routes->get('products', 'Products::index');
 $routes->get('/show/(:num)', 'Products::showProduct/$1');
 $routes->get('/product-form', 'Crud::showProductForm');
 $routes->post('/create-product', 'Crud::create');
+$routes->get('/product-edition-form/(:num)', 'Crud::showEditonProductForm/$1');
+$routes->post('/edit-product/(:num)', 'Crud::edit/$1');
