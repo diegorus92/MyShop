@@ -4,7 +4,7 @@
     <?= validation_list_errors(); ?>
 
     <?php $validation = \Config\Services::Validation(); //Used for get error messages in every input?>
-    <form method="patch" action="<?php echo base_url('/create-product') ?>">
+    <form method="post" action="<?php echo base_url('/create-product') ?>">
         <?= csrf_field(); ?> <!-- creates a hidden input with a CSRF token that helps protect against some common attacks. -->
         
         <!-- Show message wether the post was fail or not -->
