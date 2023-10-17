@@ -143,5 +143,19 @@
                 return $this->response->redirect(base_url() .'products');
             }
         }
+
+        public function deleteProduct($id){
+            $product = new ProductsModel();
+            $session = session();
+
+            if($product->where('productId', $id)->delete()){
+                $session->setFlashdata('success', 'Product deleted!');
+            }
+            else{
+                $session->setFlashdata('error', 'Delete failed :(');
+            }
+
+            return $this->response->redirect(base_url() . 'products');
+        }
     }
 ?>
